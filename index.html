@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI World & Jobs | Jawad Ahmad</title>
+    <title>AI World & Career Insights | Jawad Ahmad</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,109 +28,116 @@
         body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text-main); margin: 0; line-height: 1.9; scroll-behavior: smooth; }
 
         nav { height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
-        .brand { font-weight: 700; font-size: 1.4rem; color: var(--accent); text-decoration: none; }
-        
+        .brand { font-weight: 700; font-size: 1.4rem; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
+        #theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text-main); padding: 8px 15px; border-radius: 8px; cursor: pointer; }
+
         .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
         
-        /* Hero */
-        .hero { padding: 100px 8%; text-align: center; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 20px; }
+        .hero { padding: 120px 8% 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; background: linear-gradient(90deg, var(--accent), #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-dim); font-size: 1.3rem; max-width: 800px; margin: 0 auto; }
 
-        /* Section Styling */
         .ai-detail-section { margin-bottom: 120px; padding-top: 50px; }
-        .ai-detail-section h2 { font-size: 2.8rem; color: var(--accent); margin-bottom: 30px; font-weight: 700; }
+        .ai-detail-section h2 { font-size: 2.8rem; color: var(--accent); margin-bottom: 35px; font-weight: 700; }
         
         .ai-image {
             width: 100%;
-            height: 500px;
+            height: 520px;
             object-fit: cover;
             border-radius: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
 
-        .content-block { margin-bottom: 40px; }
-        .content-block h3 { font-size: 1.8rem; color: var(--text-main); margin-bottom: 15px; border-left: 4px solid var(--accent); padding-left: 15px; }
+        .content-block { margin-bottom: 45px; }
+        .content-block h3 { font-size: 1.9rem; color: var(--text-main); margin-bottom: 15px; border-left: 5px solid var(--accent); padding-left: 20px; }
         .content-block p { font-size: 1.15rem; color: var(--text-dim); text-align: justify; }
 
-        /* Job Analysis Box */
-        .analysis-box { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 20px; margin: 40px 0; }
-        .analysis-box h4 { color: var(--accent); margin-top: 0; font-size: 1.4rem; }
+        .highlight-box { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 20px; margin: 45px 0; }
+        .highlight-box h4 { color: var(--accent); margin-top: 0; font-size: 1.5rem; margin-bottom: 20px; }
         
-        .list-item { margin-bottom: 15px; display: flex; gap: 10px; color: var(--text-dim); }
-        .list-item strong { color: var(--text-main); }
+        .analysis-item { margin-bottom: 18px; display: flex; gap: 12px; color: var(--text-dim); font-size: 1.1rem; }
+        .analysis-item strong { color: var(--text-main); }
 
-        footer { padding: 80px 8%; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
-        .btn { background: var(--accent); color: white !important; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 20px; }
+        .btn { background: var(--accent); color: white !important; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: 0.3s; box-shadow: 0 10px 20px rgba(59,130,246,0.2); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(59,130,246,0.4); }
+
+        footer { padding: 100px 8% 50px; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
+
+        @media (max-width: 768px) { .ai-image { height: 350px; } .ai-detail-section h2 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="#" class="brand">AI.GLOBAL</a>
-    <button id="theme-toggle" style="background:var(--surface); color:var(--text-main); border:1px solid var(--border); padding:8px 15px; border-radius:8px; cursor:pointer;">🌓 Mode</button>
+    <button id="theme-toggle">🌓 Appearance</button>
 </nav>
 
 <section class="hero">
-    <h1>Global AI Standards <br> & Future Careers</h1>
-    <p>World's most used AI technologies aur Jobs market par unke asaraat.</p>
+    <h1>The Global Impact <br> of Intelligence</h1>
+    <p>Exploring the world's most dominant AI technologies and their profound influence on the future of labor and industry.</p>
 </section>
 
 <div class="container">
     
     <section class="ai-detail-section">
-        <h2>1. Most Used AI Technologies</h2>
+        <h2>1. World’s Most Used AI Technologies</h2>
         <img src="https://images.unsplash.com/photo-1675557009875-436f5993932f?q=80&w=1200" class="ai-image">
         
         <div class="content-block">
-            <h3>ChatGPT (OpenAI)</h3>
-            <p>Dunya mein sab se zyada use hone wala AI tool **ChatGPT** hai. Iske 180 million se zyada active users hain. Ye har qism ki writing, coding, aur problem solving mein logon ki madad karta hai. Isne AI ko aik aam insane ki pahunch mein la khada kiya hai.</p>
+            <h3>ChatGPT by OpenAI</h3>
+            <p>ChatGPT remains the undisputed leader in consumer AI. With over 180 million monthly active users, it has redefined how humans interact with machines. From complex coding and academic research to creative writing, ChatGPT has made "Large Language Models" a household term, proving that AI can be a personal assistant to everyone.</p>
         </div>
 
         <div class="content-block">
             <h3>Google Gemini</h3>
-            <p>Google ka sab se powerful AI model **Gemini** hai. Ye na sirf text samajhta hai balki real-time mein videos, images aur audio ko bhi process kar leta hai. Google ki saari products (Search, Docs, Gmail) ab is par chal rahi hain.</p>
+            <p>Google’s most capable AI, Gemini, is designed for multimodality. Unlike traditional models, it can seamlessly reason across text, images, video, and audio simultaneously. By integrating Gemini into billions of devices through Google Search and Android, Google is setting the standard for the next generation of real-time AI assistance.</p>
         </div>
 
         <div class="content-block">
             <h3>Midjourney & Sora</h3>
-            <p>Visual creativity mein **Midjourney** (for images) aur **Sora** (for video) ne dunya ko hairaan kar diya hai. Ab sirf ek prompt likh kar high-quality cinematic videos banayi ja sakti hain jo pehle months mein banti thin.</p>
+            <p>In the realm of visual synthesis, Midjourney (Images) and Sora (Video) have disrupted the creative industry. These models use advanced "Diffusion" techniques to transform text prompts into cinematic-quality visuals, reducing production times from months to mere seconds.</p>
         </div>
     </section>
 
     <section class="ai-detail-section">
-        <h2>2. AI and The Job Market</h2>
+        <h2>2. AI and the Future of Jobs</h2>
         <img src="https://images.unsplash.com/photo-1521898284481-a5ec0482d79a?q=80&w=1200" class="ai-image">
         
         <div class="content-block">
-            <h3>Kya AI Jobs Khatam Kar Dega?</h3>
-            <p>Ye aik bohat bada sawal hai. Sach ye hai ke AI jobs ko **"Replace"** nahi karega, balki AI un logon ko replace karega jo AI use karna nahi jaante. Data entry, basic customer service aur repetitive factory jobs par khatra hai, lekin creativity aur strategy wali jobs mazeed barhen gi.</p>
+            <h3>The Great Labor Shift</h3>
+            <p>The biggest question of 2026 is: "Will AI replace my job?" The reality is nuanced. AI is not necessarily replacing humans, but humans who use AI are replacing those who do not. While repetitive, manual, and data-entry roles are facing automation, there is a massive surge in demand for creative, strategic, and high-level decision-making roles.</p>
         </div>
 
-        <div class="analysis-box">
-            <h4>Impact Analysis (2026):</h4>
-            <div class="list-item">🚀 <strong>New Jobs:</strong> Prompt Engineering, AI Ethics Officer, aur Machine Learning Maintenance.</div>
-            <div class="list-item">⚠️ <strong>At Risk:</strong> Manual Data Entry, Basic Translation, aur Proofreading.</div>
-            <div class="list-item">💡 <strong>Advice:</strong> Apne skills ko AI ke sath integrate karein. AI ko apna "Assistant" banayein, dushman nahi.</div>
+        <div class="highlight-box">
+            <h4>Employment Analysis (2026):</h4>
+            <div class="analysis-item">🚀 <strong>High Growth:</strong> Prompt Engineering, AI Ethics Auditing, Machine Learning Maintenance, and Creative Strategy.</div>
+            <div class="analysis-item">⚠️ <strong>Automation Risk:</strong> Routine Data Analysis, Basic Translation, and Standardized Customer Support.</div>
+            <div class="analysis-item">💡 <strong>Core Insight:</strong> AI increases "Productivity," not just "Automation." The goal is to become a "Human-AI Hybrid" worker.</div>
         </div>
 
         <div class="content-block">
-            <h3>The Hybrid Workforce</h3>
-            <p>Future mein insan aur AI sath mil kar kaam karenge. AI boring aur mushkil calculations karega jabke insan "Final Decision" aur "Emotional Intelligence" ka istemaal karenge. Is se dunya ki productivity 40% tak barhne ki umeed hai.</p>
+            <h3>The Productivity Revolution</h3>
+            <p>Economists predict that AI integration will boost global GDP by 14% over the next decade. By handling the "boring" parts of jobs—like scheduling, summarizing, and basic drafting—AI allows professionals to focus on innovation and complex problem-solving that requires emotional intelligence and human intuition.</p>
         </div>
     </section>
 
-    <section style="text-align: center; margin: 100px 0; background: var(--surface); padding: 60px; border-radius: 30px; border: 1px solid var(--border);">
-        <h2>Share Your Decision</h2>
-        <p style="color: var(--text-dim); margin-bottom: 30px;">Kya aapko lagta hai ke AI aapki field mein tabdeeli layega? Apni raye post karein.</p>
-        <a href="mailto:for.working.p.8080@gmail.com?subject=AI and Jobs Discussion" class="btn">Post My Decision</a>
+    <section style="text-align: center; margin: 120px 0; background: var(--surface); padding: 80px 40px; border-radius: 35px; border: 1px solid var(--border);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Share Your Perspective</h2>
+        <p style="color: var(--text-dim); margin-bottom: 40px; font-size: 1.2rem;">
+            Do you believe AI is a threat or a partner in your career path? <br>
+            Post your decision and join the global discussion.
+        </p>
+        <a href="mailto:for.working.p.8080@gmail.com?subject=Career and AI Discussion" class="btn">Post My Decision</a>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Jawad Ahmad | Professional AI & Career Insights</p>
+    <p>&copy; 2026 Jawad Ahmad | AI Research & Career Documentation</p>
+    <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 10px;">Authored in English for a Global Audience.</p>
 </footer>
 
 <script>
