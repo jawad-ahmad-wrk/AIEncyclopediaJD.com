@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jawad Ahmad | Tech & Innovation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>AI Universe | AI World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0b0f1a;
@@ -24,165 +24,144 @@
             --border: #e2e8f0;
         }
 
-        * { box-sizing: border-box; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; transition: 0.3s ease; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text-main); margin: 0; line-height: 1.8; scroll-behavior: smooth; }
 
-        nav {
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10%;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Navigation */
+        nav { height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        .brand { font-weight: 700; font-size: 1.4rem; color: var(--accent); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--accent); }
+        #theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text-main); padding: 8px 15px; border-radius: 6px; cursor: pointer; }
 
-        .brand { font-weight: 600; font-size: 1.2rem; text-decoration: none; color: var(--text-main); letter-spacing: 1px; }
-        .nav-right { display: flex; align-items: center; gap: 25px; }
-        .nav-right a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
-        .nav-right a:hover { color: var(--accent); }
+        /* Hero */
+        .hero { padding: 100px 8%; text-align: center; background: linear-gradient(to bottom, var(--bg), var(--surface)); }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700; line-height: 1.1; margin-bottom: 25px; }
+        .hero p { font-size: 1.2rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px; }
 
-        #theme-toggle {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 8%; }
+        .section-title { font-size: 2rem; font-weight: 700; margin: 80px 0 40px; border-left: 5px solid var(--accent); padding-left: 20px; }
 
-        .hero { padding: 120px 10% 80px; max-width: 1100px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 20px; font-weight: 600; line-height: 1.1; }
-        .hero p { color: var(--text-dim); font-size: 1.15rem; max-width: 600px; margin-bottom: 40px; }
+        /* Bio Section */
+        .bio-box { background: var(--surface); padding: 40px; border-radius: 15px; border: 1px solid var(--border); margin-bottom: 60px; }
+        .bio-box h2 { margin-top: 0; color: var(--accent); }
 
-        .btn { 
-            background: var(--accent); 
-            color: #ffffff !important; 
-            padding: 14px 32px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: 500; 
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        /* Grid System */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: var(--surface); padding: 30px; border-radius: 12px; border: 1px solid var(--border); height: 100%; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .card h3 { margin-top: 0; color: var(--accent); }
 
-        .section-padding { padding: 80px 10%; max-width: 1100px; margin: 0 auto; }
-        .section-title { font-size: 1.8rem; margin-bottom: 40px; color: var(--text-main); font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        /* Roadmap Section */
+        .roadmap { display: flex; flex-direction: column; gap: 20px; }
+        .step { display: flex; gap: 20px; align-items: flex-start; }
+        .number { background: var(--accent); color: white; min-width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
 
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .project-card {
-            background: var(--surface);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            text-decoration: none;
-            color: inherit;
-        }
-        .project-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        /* Button */
+        .btn { background: var(--accent); color: white !important; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; border: none; cursor: pointer; }
 
-        .box-container {
-            background: var(--surface);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
-        }
+        footer { padding: 80px 8% 40px; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.9rem; }
 
-        footer {
-            padding: 60px 10%;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            nav { padding: 0 5%; }
-            .nav-right a { display: none; }
-            .hero, .section-padding { padding: 60px 5%; }
-        }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="brand">JAWAD AHMAD</a>
-    <div class="nav-right">
-        <a href="#projects">Work</a>
+    <a href="#" class="brand">AI EXPLORER</a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#pillars">Technologies</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="#community">Community</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle">Light / Dark</button>
     </div>
+    <button id="theme-toggle">🌓 Mode</button>
 </nav>
 
 <section class="hero">
-    <h1>Engineering the Next <br> Phase of the Web.</h1>
-    <p>Independent developer focused on the intersection of neural networks, high-performance web systems, and modern automation.</p>
-    <a href="#projects" class="btn">Explore Projects</a>
+    <h1>The Future of <br>Artificial Intelligence</h1>
+    <p>Documenting the evolution of machine intelligence and its impact on the modern digital landscape.</p>
+    <a href="#about" class="btn">Explore Knowledge Base</a>
 </section>
 
-<section class="section-padding" id="projects">
-    <h2 class="section-title">Selected Repositories</h2>
-    <div class="project-grid">
-        <div class="project-card">
-            <h3>Neural-Core-V1</h3>
-            <p>Implementing attention-based models for edge computing and localized data processing.</p>
+<div class="container">
+    <section id="about" class="bio-box">
+        <h2>About This Project</h2>
+        <p>This website is about Artificial Intelligence (AI), where I share information, trends, and knowledge about modern AI technologies. My mission is to provide a comprehensive resource for anyone looking to understand how neural networks, automation, and predictive modeling are shaping our world in 2026.</p>
+    </section>
+
+    <h2 class="section-title" id="pillars">Core AI Technologies</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Natural Language (LLMs)</h3>
+            <p>Advanced language models like Gemini 3 and GPT-5 that process, understand, and generate human-like text at an unprecedented scale.</p>
         </div>
-        <div class="project-card">
-            <h3>Auto-Synth-Engine</h3>
-            <p>A modular engine designed for rapid deployment of synthetic media environments.</p>
+        <div class="card">
+            <h3>Computer Vision</h3>
+            <p>Algorithms that allow machines to interpret visual data from the world, used in medical imaging, security, and autonomous vehicles.</p>
+        </div>
+        <div class="card">
+            <h3>Generative Media</h3>
+            <p>The tech behind synthetic images, high-fidelity audio, and cinematic video generation from simple text descriptions.</p>
+        </div>
+        <div class="card">
+            <h3>Reinforcement Learning</h3>
+            <p>Training models through trial and error to perform complex decision-making tasks, essential for robotics and game theory.</p>
+        </div>
+        <div class="card">
+            <h3>AI Ethics & Safety</h3>
+            <p>A critical field focused on ensuring AI systems are unbiased, transparent, and aligned with human values.</p>
+        </div>
+        <div class="card">
+            <h3>Edge AI</h3>
+            <p>Running powerful AI models directly on local hardware (phones, sensors) rather than relying on the cloud.</p>
         </div>
     </div>
-</section>
 
-<section class="section-padding" id="community">
-    <h2 class="section-title">Community Board</h2>
-    <div class="box-container">
-        <h3 style="margin-top:0;">Discuss AI Trends & Decisions</h3>
-        <p style="color: var(--text-dim); margin-bottom: 30px;">
-            Join the conversation. Post your thoughts on the latest AI tools, share your research, or ask questions below.
-        </p>
+    <h2 class="section-title" id="roadmap">How to Learn AI (2026 Guide)</h2>
+    <div class="bio-box roadmap">
+        <div class="step">
+            <div class="number">1</div>
+            <div><strong>Mathematics & Logic:</strong> Understanding linear algebra, calculus, and probability is the foundation of every model.</div>
+        </div>
+        <div class="step">
+            <div class="number">2</div>
+            <div><strong>Programming:</strong> Master Python and specialized libraries like PyTorch, TensorFlow, and JAX.</div>
+        </div>
+        <div class="step">
+            <div class="number">3</div>
+            <div><strong>Model Architecture:</strong> Learn about Transformers, CNNs, and Diffusion models.</div>
+        </div>
+        <div class="step">
+            <div class="number">4</div>
+            <div><strong>Practical Deployment:</strong> Build and host your own AI agents using GitHub and API integrations.</div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="community">Community Discussion</h2>
+    <div class="bio-box">
+        <p>Join the conversation. Post your thoughts on AI trends or share your recent discoveries. (Requires GitHub login).</p>
         <div class="giscus">
-            <p style="color: var(--accent); font-style: italic;">[Community comments will load here]</p>
+            <p style="color: var(--accent); font-style: italic;">[Comments will load here once Giscus is connected]</p>
         </div>
     </div>
-</section>
 
-<section class="section-padding" id="contact">
-    <h2 class="section-title">Start a Conversation</h2>
-    <div class="box-container" style="text-align: center; padding: 60px 20px;">
-        <p style="color: var(--text-dim); margin-bottom: 30px;">I'm currently open to new projects and technical research collaborations.</p>
-        <a href="mailto:for.working.p.8080@gmail.com?subject=Inquiry%20from%20Portfolio" class="btn">Send an Email</a>
-    </div>
-</section>
+    <section style="text-align: center; margin: 100px 0;" id="contact">
+        <h2 style="font-size: 2.5rem;">Ready to collaborate?</h2>
+        <p style="color: var(--text-dim); margin-bottom: 30px;">I'm open to research projects and technical discussions.</p>
+        <a href="mailto:for.working.p.8080@gmail.com?subject=Inquiry from AI Explorer" class="btn">Send an Email</a>
+    </section>
+</div>
 
 <footer>
-    <div>&copy; 2026 Jawad Ahmad. All Rights Reserved.</div>
-    <div>System Status: Operational</div>
+    <p>&copy; 2026 Jawad Ahmad. This site is a dedicated research portal for AI Technologies.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">Manually crafted with semantic HTML and CSS Grid.</p>
 </footer>
 
 <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
-
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') body.setAttribute('data-theme', 'light');
 
