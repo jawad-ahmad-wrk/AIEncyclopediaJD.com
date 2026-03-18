@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI World & Career Insights | Jawad Ahmad</title>
+    <title>The AI Encyclopedia | Jawad Ahmad</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,134 +25,180 @@
         }
 
         * { box-sizing: border-box; transition: 0.3s ease; }
-        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text-main); margin: 0; line-height: 1.9; scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text-main); margin: 0; line-height: 1.8; scroll-behavior: smooth; }
 
         nav { height: 80px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
-        .brand { font-weight: 700; font-size: 1.4rem; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
+        .brand { font-weight: 700; font-size: 1.4rem; color: var(--accent); text-decoration: none; }
         #theme-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text-main); padding: 8px 15px; border-radius: 8px; cursor: pointer; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
         
-        .hero { padding: 120px 8% 80px; text-align: center; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; background: linear-gradient(90deg, var(--accent), #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { color: var(--text-dim); font-size: 1.3rem; max-width: 800px; margin: 0 auto; }
+        .hero { padding: 120px 8% 60px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 20px; background: linear-gradient(90deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
 
-        .ai-detail-section { margin-bottom: 120px; padding-top: 50px; }
-        .ai-detail-section h2 { font-size: 2.8rem; color: var(--accent); margin-bottom: 35px; font-weight: 700; }
+        .ai-section { margin-bottom: 120px; border-bottom: 1px solid var(--border); padding-bottom: 60px; }
+        .ai-section h2 { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; font-weight: 700; }
         
-        .ai-image {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            border-radius: 25px;
-            margin-bottom: 45px;
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-        }
+        /* Image Box */
+        .img-container { width: 100%; height: 500px; overflow: hidden; border-radius: 20px; margin-bottom: 35px; border: 1px solid var(--border); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .ai-image { width: 100%; height: 100%; object-fit: cover; }
 
-        .content-block { margin-bottom: 45px; }
-        .content-block h3 { font-size: 1.9rem; color: var(--text-main); margin-bottom: 15px; border-left: 5px solid var(--accent); padding-left: 20px; }
-        .content-block p { font-size: 1.15rem; color: var(--text-dim); text-align: justify; }
+        .desc { font-size: 1.15rem; color: var(--text-dim); text-align: justify; }
+        .desc strong { color: var(--text-main); border-bottom: 1px solid var(--accent); }
 
-        .highlight-box { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 20px; margin: 45px 0; }
-        .highlight-box h4 { color: var(--accent); margin-top: 0; font-size: 1.5rem; margin-bottom: 20px; }
-        
-        .analysis-item { margin-bottom: 18px; display: flex; gap: 12px; color: var(--text-dim); font-size: 1.1rem; }
-        .analysis-item strong { color: var(--text-main); }
+        .post-box { text-align: center; background: var(--surface); padding: 70px 40px; border-radius: 30px; border: 1px solid var(--border); margin: 80px 0; }
+        .btn { background: var(--accent); color: white !important; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; box-shadow: 0 8px 20px rgba(59,130,246,0.3); }
 
-        .btn { background: var(--accent); color: white !important; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: 0.3s; box-shadow: 0 10px 20px rgba(59,130,246,0.2); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(59,130,246,0.4); }
-
-        footer { padding: 100px 8% 50px; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); }
-
-        @media (max-width: 768px) { .ai-image { height: 350px; } .ai-detail-section h2 { font-size: 2.2rem; } }
+        footer { padding: 60px 8%; text-align: center; color: var(--text-dim); border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="brand">AI.GLOBAL</a>
-    <button id="theme-toggle">🌓 Appearance</button>
+    <a href="#" class="brand">AI.ENCYCLOPEDIA</a>
+    <button id="theme-toggle">🌓 Mode</button>
 </nav>
 
 <section class="hero">
-    <h1>The Global Impact <br> of Intelligence</h1>
-    <p>Exploring the world's most dominant AI technologies and their profound influence on the future of labor and industry.</p>
+    <h1>The Ultimate Guide <br> to Modern AI</h1>
+    <p>Everything you need to know about the 14 pillars of Intelligence in 2026.</p>
 </section>
 
 <div class="container">
-    
-    <section class="ai-detail-section">
-        <h2>1. World’s Most Used AI Technologies</h2>
-        <img src="https://images.unsplash.com/photo-1675557009875-436f5993932f?q=80&w=1200" class="ai-image">
-        
-        <div class="content-block">
-            <h3>ChatGPT by OpenAI</h3>
-            <p>ChatGPT remains the undisputed leader in consumer AI. With over 180 million monthly active users, it has redefined how humans interact with machines. From complex coding and academic research to creative writing, ChatGPT has made "Large Language Models" a household term, proving that AI can be a personal assistant to everyone.</p>
-        </div>
 
-        <div class="content-block">
-            <h3>Google Gemini</h3>
-            <p>Google’s most capable AI, Gemini, is designed for multimodality. Unlike traditional models, it can seamlessly reason across text, images, video, and audio simultaneously. By integrating Gemini into billions of devices through Google Search and Android, Google is setting the standard for the next generation of real-time AI assistance.</p>
+    <section class="ai-section">
+        <h2>1. Generative AI</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Generative AI">
         </div>
-
-        <div class="content-block">
-            <h3>Midjourney & Sora</h3>
-            <p>In the realm of visual synthesis, Midjourney (Images) and Sora (Video) have disrupted the creative industry. These models use advanced "Diffusion" techniques to transform text prompts into cinematic-quality visuals, reducing production times from months to mere seconds.</p>
-        </div>
+        <p class="desc"><strong>Generative AI</strong> creates new content such as text, high-res images, and cinematic videos. It uses Large Language Models (LLMs) to predict patterns and generate original outputs based on simple human prompts.</p>
     </section>
 
-    <section class="ai-detail-section">
-        <h2>2. AI and the Future of Jobs</h2>
-        <img src="https://images.unsplash.com/photo-1521898284481-a5ec0482d79a?q=80&w=1200" class="ai-image">
-        
-        <div class="content-block">
-            <h3>The Great Labor Shift</h3>
-            <p>The biggest question of 2026 is: "Will AI replace my job?" The reality is nuanced. AI is not necessarily replacing humans, but humans who use AI are replacing those who do not. While repetitive, manual, and data-entry roles are facing automation, there is a massive surge in demand for creative, strategic, and high-level decision-making roles.</p>
+    <section class="ai-section">
+        <h2>2. Natural Language Processing</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="NLP">
         </div>
-
-        <div class="highlight-box">
-            <h4>Employment Analysis (2026):</h4>
-            <div class="analysis-item">🚀 <strong>High Growth:</strong> Prompt Engineering, AI Ethics Auditing, Machine Learning Maintenance, and Creative Strategy.</div>
-            <div class="analysis-item">⚠️ <strong>Automation Risk:</strong> Routine Data Analysis, Basic Translation, and Standardized Customer Support.</div>
-            <div class="analysis-item">💡 <strong>Core Insight:</strong> AI increases "Productivity," not just "Automation." The goal is to become a "Human-AI Hybrid" worker.</div>
-        </div>
-
-        <div class="content-block">
-            <h3>The Productivity Revolution</h3>
-            <p>Economists predict that AI integration will boost global GDP by 14% over the next decade. By handling the "boring" parts of jobs—like scheduling, summarizing, and basic drafting—AI allows professionals to focus on innovation and complex problem-solving that requires emotional intelligence and human intuition.</p>
-        </div>
+        <p class="desc"><strong>NLP</strong> allows machines to communicate with humans. It powers voice assistants, real-time translators, and sentiment analysis tools that can detect human emotions through text.</p>
     </section>
 
-    <section style="text-align: center; margin: 120px 0; background: var(--surface); padding: 80px 40px; border-radius: 35px; border: 1px solid var(--border);">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Share Your Perspective</h2>
-        <p style="color: var(--text-dim); margin-bottom: 40px; font-size: 1.2rem;">
-            Do you believe AI is a threat or a partner in your career path? <br>
-            Post your decision and join the global discussion.
-        </p>
-        <a href="mailto:for.working.p.8080@gmail.com?subject=Career and AI Discussion" class="btn">Post My Decision</a>
+    <section class="ai-section">
+        <h2>3. Computer Vision</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1527430253228-e926e8c27599?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Computer Vision">
+        </div>
+        <p class="desc"><strong>Computer Vision</strong> is the "eyes" of AI. It enables systems to identify objects in images and videos, essential for self-driving cars, security systems, and facial recognition.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>4. AI and the Job Market</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Robotics">
+        </div>
+        <p class="desc">The shift towards <strong>AI Automation</strong> is redefining careers. While some routine roles are being automated, new fields like Prompt Engineering and AI Ethics are creating thousands of high-paying jobs.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>5. Cybersecurity AI</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Cybersecurity">
+        </div>
+        <p class="desc">AI is now a shield against hackers. <strong>Predictive Cybersecurity</strong> uses AI to detect malware and stop attacks before they breach a network.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>6. Healthcare AI</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Healthcare">
+        </div>
+        <p class="desc">AI-powered <strong>Medical Diagnostics</strong> can scan X-rays for diseases with 99% accuracy, helping doctors save lives through early detection and robotic surgeries.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>7. Fintech & Algorithmic Trading</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1611974717482-480927918f8e?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Finance">
+        </div>
+        <p class="desc">In the world of finance, AI handles millions of stock trades per second. <strong>Fintech AI</strong> also helps banks detect credit card fraud instantly.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>8. Edge AI</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Hardware">
+        </div>
+        <p class="desc"><strong>Edge AI</strong> allows smartphones and smart devices to process data locally without using the internet, making them faster and more secure.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>9. Recommendation Algorithms</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Streaming">
+        </div>
+        <p class="desc">Social media and streaming platforms use <strong>Personalized AI</strong> to show you exactly what you like, from YouTube videos to Amazon products.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>10. Climate & Weather AI</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Nature">
+        </div>
+        <p class="desc">AI helps scientists track climate change by analyzing global temperature data and predicting weather patterns with extreme precision.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>11. AI Ethics & Safety</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Ethics">
+        </div>
+        <p class="desc"><strong>AI Ethics</strong> is the study of how to make AI safe for humans, ensuring that algorithms are fair and do not have bias.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>12. Humanoid Robotics</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1546776230-bb862b48a395?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Robots">
+        </div>
+        <p class="desc">Modern robots use <strong>Embodied AI</strong> to move and think like humans, helping in warehouses and household chores.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>13. Quantum Machine Learning</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Quantum">
+        </div>
+        <p class="desc"><strong>Quantum AI</strong> is the future. It uses quantum computers to solve math problems that are impossible for today's fastest machines.</p>
+    </section>
+
+    <section class="ai-section">
+        <h2>14. AGI (The Future)</h2>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80" class="ai-image" alt="Future">
+        </div>
+        <p class="desc"><strong>Artificial General Intelligence</strong> is the goal of creating an AI that is as smart as—or smarter than—a human in every single way.</p>
+    </section>
+
+    <section class="post-box">
+        <h2>Post Your AI Perspective</h2>
+        <p class="desc">Now that you've explored the 14 pillars, share your verdict. <br> Is AI the future of humanity?</p>
+        <a href="mailto:for.working.p.8080@gmail.com" class="btn">SUBMIT MY VOTE</a>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Jawad Ahmad | AI Research & Career Documentation</p>
-    <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 10px;">Authored in English for a Global Audience.</p>
+    <p>&copy; 2026 Jawad Ahmad | Professional AI Research Portal</p>
 </footer>
 
 <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') body.setAttribute('data-theme', 'light');
-
     toggleBtn.addEventListener('click', () => {
         if (body.getAttribute('data-theme') === 'light') {
             body.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
         } else {
             body.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
         }
     });
 </script>
